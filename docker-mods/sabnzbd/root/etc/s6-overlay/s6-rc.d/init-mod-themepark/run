@@ -19,8 +19,8 @@ fi
 
 # Set default
 if [[ -z ${TP_DOMAIN} ]]; then
-    echo 'No domain set, defaulting to theme-park.dev'
-    TP_DOMAIN='theme-park.dev'
+    echo 'No domain set, defaulting to iceshadow1404.github.io'
+    TP_DOMAIN='iceshadow1404.github.io'
 fi
 if [[ -z ${TP_SCHEME} ]]; then
     echo 'No scheme set, defaulting to https'

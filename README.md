@@ -1,3 +1,31 @@
+> ## Fork notes
+>
+> This is a fork of theme.park carrying a fix for SABnzbd 5.1, which introduced its own `--clr-*`
+> color palette that left the Queue, History and Config panels in SABnzbd's native colors.
+>
+> **What is different from upstream**
+>
+> * `css/base/sabnzbd/sabnzbd-base.css` maps SABnzbd's `--clr-*` variables onto the theme.park variables.
+> * The CSS is served from GitHub Pages of this fork: `https://iceshadow1404.github.io/theme.park/`.
+> * The SABnzbd Docker mod defaults to `TP_DOMAIN=iceshadow1404.github.io` and is published as
+>   `ghcr.io/iceshadow1404/theme.park:sabnzbd` by `.github/workflows/build-sabnzbd-mod.yml`.
+> * Upstream workflows that require secrets not available in a fork (`auto-build.yml`, `minify-and-deploy.yml`)
+>   and the `CNAME` file were removed so GitHub Pages can serve this fork directly from `master`.
+>
+> **Usage**
+>
+> ```yaml
+> services:
+>   sabnzbd:
+>     image: ghcr.io/linuxserver/sabnzbd:5.1.0-ls266
+>     environment:
+>       DOCKER_MODS: ghcr.io/iceshadow1404/theme.park:sabnzbd
+>       TP_THEME: catppuccin-frappe
+>       TP_COMMUNITY_THEME: "true"
+> ```
+>
+> Every other app still points at `theme-park.dev`; only the SABnzbd mod defaults to this fork.
+
 <a href="https://theme-park.dev"><img src="banners/tp_banner.png"/></a> 
 
 [![Docs](https://img.shields.io/static/v1.svg?color=009688&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=theme-park.dev&message=Docs)](https://docs.theme-park.dev "Documentation for all the themes in this repository.")

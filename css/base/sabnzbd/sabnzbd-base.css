@@ -9,8 +9,38 @@
 /*		   		        Made by @gilbN					 */
 /*			      https://github.com/gilbN/theme.park			 */
 
-@import url("/css/defaults/placeholders.css");
-@import url("/css/defaults/transparent.css");
+@import url("../../defaults/placeholders.css");
+@import url("../../defaults/transparent.css");
+
+/* SABnzbd 5.1 introduced its own --clr-* palette in Glitter and Config.
+   Those variables are consumed by rules theme.park does not override, so they
+   are remapped here instead of duplicating every SABnzbd rule. */
+:root {
+  --clr-page-bg: var(--main-bg-color);
+  --clr-surface: var(--transparency-dark-15);
+  --clr-surface-alt: var(--transparency-dark-25);
+  --clr-surface-hover: var(--transparency-light-10);
+  --clr-border: var(--transparency-dark-25);
+  --clr-border-subtle: var(--transparency-dark-15);
+  --clr-text: var(--text);
+  --clr-text-muted: var(--text-muted);
+  --clr-link: var(--link-color);
+  --clr-input-bg: var(--button-color);
+  --clr-input-border: transparent;
+  --clr-dropdown-bg: var(--drop-down-menu-bg);
+  --clr-modal-bg: var(--modal-bg-color);
+  --clr-modal-header-bg: var(--modal-header-color);
+  --clr-table-bg: transparent;
+  --clr-table-row-alt: transparent;
+  --clr-progress-track: var(--transparency-dark-25);
+  --clr-toggle-active: rgb(var(--accent-color));
+  --clr-toggle-inactive: var(--transparency-light-25);
+}
+
+.history-queue-swicher .badge {
+  background-color: rgb(var(--accent-color)) !important;
+  color: var(--label-text-color) !important;
+}
 
 body {
   background: var(--main-bg-color) !important;
